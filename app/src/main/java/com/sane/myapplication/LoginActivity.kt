@@ -1,4 +1,4 @@
-package com.angler.task
+package com.sane.myapplication
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -12,6 +12,7 @@ import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.google.android.material.textview.MaterialTextView
+import com.sane.myapplication.RegisterActivity
 
 class LoginActivity : AppCompatActivity(), View.OnClickListener {
     private var registerTxt: MaterialTextView? = null

@@ -1,4 +1,4 @@
-package com.angler.task
+package com.sane.myapplication
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -37,7 +37,8 @@ class HomeActivity : AppCompatActivity() {
             finish()
         }
 
-        userId = PreferencesHelper.getPreference(this@HomeActivity, PreferencesHelper.PREF_USERID).toLong()
+        userId = PreferencesHelper.getPreference(this@HomeActivity, PreferencesHelper.PREF_USERID)!!
+            .toLong()
 
         val db = dbHelper.readableDatabase
         val projection = arrayOf(

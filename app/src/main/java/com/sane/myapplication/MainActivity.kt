@@ -1,24 +1,26 @@
-package com.angler.task
+package com.sane.myapplication
 
 import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import androidx.appcompat.app.AppCompatActivity
-import com.angler.task.PreferencesHelper.getPreference
+import com.sane.myapplication.PreferencesHelper.getPreference
 
-class SplashActivity : AppCompatActivity() {
+
+class MainActivity : AppCompatActivity() {
     var token: String? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-        token = getPreference(this@SplashActivity, PreferencesHelper.PREF_TOKEN)
+        token = getPreference(this@MainActivity, PreferencesHelper.PREF_TOKEN)
         Handler().postDelayed({
             if (token!!.isNotEmpty()) {
-                val intent = Intent(this@SplashActivity, HomeActivity::class.java)
+                val intent = Intent(this@MainActivity, HomeActivity::class.java)
                 startActivity(intent)
                 finish()
             } else {
-                val intent = Intent(this@SplashActivity, LoginActivity::class.java)
+                val intent = Intent(this@MainActivity, LoginActivity::class.java)
                 startActivity(intent)
                 finish()
             }
